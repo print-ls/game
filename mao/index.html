@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>抓耄耋</title>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+
+   <h1>
+  <img src="images/mao8.gif" alt="标题动画" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 10px;">
+  
+</h1>
+
+    <!-- 设置面板 -->
+    <div id="setupPanel" class="panel">
+        <h2>⏰ 设置游戏时间</h2>
+        <label>
+            <input type="checkbox" id="infiniteMode"> 启用无计时模式
+        </label>
+
+        <!-- 新增：速度设置 -->
+        <div id="speedSetting" style="margin-top: 10px;">
+            <label>图片移动速度：</label>
+            <input type="number" id="speedInput" value="1" min="0.5" step="0.1" max="5">
+        </div>
+
+        <select id="timeSelect">
+            <option value="10">10 秒</option>
+            <option value="30" selected>30 秒</option>
+            <option value="60">60 秒</option>
+        </select>
+        <button id="startBtn">开始游戏</button>
+    </div>
+
+<!-- 游戏区域 -->
+<div id="gameArea">
+    <div id="scoreBoard">抓住了：0</div>
+    <div id="timer">剩余时间：--s</div>
+
+    <!-- 图片容器 -->
+    <div id="imageContainer"></div>
+
+    <!-- 结算游戏按钮（默认隐藏） -->
+    <button id="finishGameBtn" style="display: none; margin-top: 10px; padding: 8px 16px; font-size: 14px; background-color: #ffc107; color: #333; border: none; border-radius: 5px; cursor: pointer;">
+        🛑 结算游戏
+    </button>
+</div>
+    <!-- 结算面板 -->
+    <div id="endPanel" class="panel">
+        <h2>⏰ 游戏结束</h2>
+        <p id="finalScore"></p>
+        <p id="usedTime"></p>
+        <p id="rank"></p>
+        <p id="highScoreDisplay"></p>
+        <button id="endGameBtn">结束游戏</button>
+        <button id="restartBtn">重新设置</button>
+    </div>
+
+    <!-- 音频元素和按钮 -->
+    <audio id="bgMusic" src="music/background.mp3" loop></audio>
+    <button id="toggleMusicBtn">🔊 开启音乐</button>
+
+    <script src="game.js"></script>
+</body>
+</html>

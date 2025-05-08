@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#setupPanel,
+#endPanel,
+#gameArea {
+    display: none;
+}
+
+.panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(images/mao6.gif);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 点击反馈动画 */
+@keyframes clickFeedback {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.clickFeedback {
+    animation: clickFeedback 0.3s ease-out;
+}
+
+#setupPanel label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#setupPanel select,
+#setupPanel button,
+#setupPanel input[type="number"] {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 8px 12px;
+}
+
+#scoreBoard,
+#timer {
+    font-size: 20px;
+    margin: 10px;
+    color: green;
+}
+
+#gameArea {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.clickImage {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#restartBtn,
+#endGameBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#endGameBtn {
+    background-color: #dc3545;
+}
+
+#endGameBtn:hover {
+    background-color: #c82333;
+}
+
+#restartBtn:hover {
+    background-color: #218838;
+}
+
+/* 音乐按钮样式 */
+#toggleMusicBtn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggleMusicBtn:hover {
+    background-color: #0056b3;
+}
